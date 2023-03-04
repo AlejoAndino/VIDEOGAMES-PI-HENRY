@@ -38,11 +38,17 @@ const getDbInfo = async () => {
     })
 };
 
-const getAllGames = async () => {
-    const apiInfo = await getApiData();
-    const dbInfo = await getDbInfo();
-    const totalData = apiInfo.concat(dbInfo);
-    return totalData;
+const getAllGames = async (req, res) => {
+    try {
+        const apiInfo = await getApiData();
+        const dbInfo = await getDbInfo();
+        const totalData = apiInfo.concat(dbInfo);
+        const allVideogames = totalData;
+        res.status(200).json(allVideogames)
+    } 
+    catch (error) {
+        res.status(400).send({error: "getAllGames " + error.message})
+    }
 };
 
 module.exports = {

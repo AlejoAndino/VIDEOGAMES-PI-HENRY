@@ -1,5 +1,6 @@
 const app = require('./routes/server');
 const { sequelize } = require('./DB_connection');
+const { getAllGenres } = require('./controllers/getAllGenres');
 
 
 sequelize.sync({force: true}).then( async () =>{
