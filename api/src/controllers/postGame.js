@@ -11,7 +11,8 @@ const postGame = async (req, res) => {
             platforms,
             image,
             released,
-            rating
+            rating,
+            genres
         });
 
         // Asociar los géneros indicados con el nuevo videojuego

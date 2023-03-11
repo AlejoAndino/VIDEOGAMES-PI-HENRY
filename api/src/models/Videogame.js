@@ -35,6 +35,10 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    genres: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
+    },
     CreatedInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

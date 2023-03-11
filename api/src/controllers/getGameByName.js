@@ -27,7 +27,8 @@ const getGameByName = async (req, res) => {
                 platforms: el.platforms.map(el => el.platform.name),
                 image: el.background_image,
                 released: el.released,
-                rating: el.rating
+                rating: el.rating,
+                genres: el.genres.map(el => el.name)
             }
         });
         // COMBINO LOS RESULTADOS

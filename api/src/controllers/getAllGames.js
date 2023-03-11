@@ -17,7 +17,8 @@ const getApiData = async () => {
                 platforms: el.platforms.map( el => el.platform.name),
                 image: el.background_image,
                 released: el.released,
-                rating: el.rating
+                rating: el.rating,
+                genres: el.genres.map( el => el.name)
             }
         });
         games = games.concat(apiInfo);

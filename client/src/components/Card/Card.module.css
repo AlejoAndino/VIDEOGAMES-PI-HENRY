@@ -1,0 +1,38 @@
+.genre {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.container_card {
+    background-color: aliceblue;
+    width: 230px;
+    height: 290px;
+    border-radius: 2%;
+    margin: 0 50px;
+    border: 5px solid rgb(188, 11, 11, 20%);
+    position: relative;
+}
+
+.img {
+    width: 100%;
+}
+
+.container_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_name {
+   display: flex; 
+   position: relative;
+}
+
+.name {
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    left: 4%;
+    background-color: rgb(102, 103, 104);
+    color: aliceblue;
+    padding: 2px;
+}
