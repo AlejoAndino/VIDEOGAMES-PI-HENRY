@@ -16,6 +16,7 @@ function SearchBar() {
    const handleSubmit = (e) => {
       e.preventDefault();
       dispatch(getGamesByName(name));
+      setName("");
    }
 
    return (

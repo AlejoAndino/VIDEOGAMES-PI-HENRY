@@ -1,0 +1,26 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .inner {
+    height: 120px;
+    width: 120px;
+    position: relative;
+    animation: rotate 2s infinite ease-in-out;
+    background-image: url("../../assets/controller\ blue.png");
+    background-size: cover;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  

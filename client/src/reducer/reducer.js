@@ -1,4 +1,4 @@
-import { FILTER_BY_GENRE, FILTER_CREATED, GET_DETAIL, GET_GAMES, GET_GAMES_BY_NAME, GET_GENRES, ORDER_GAMES, POST_GAME } from "../actions/actions-types";
+import { CLEAR_DETAIL, FILTER_BY_GENRE, FILTER_CREATED, GET_DETAIL, GET_GAMES, GET_GAMES_BY_NAME, GET_GENRES, ORDER_GAMES, POST_GAME } from "../actions/actions-types";
 
 const initialState = {
     myGames: [],
@@ -26,6 +26,11 @@ const reducer = (state = initialState, { type, payload }) => {
                 myGenres: payload
             }
         case GET_DETAIL:
+            return {
+                ...state,
+                myDetail: payload
+            }
+        case CLEAR_DETAIL:
             return {
                 ...state,
                 myDetail: payload

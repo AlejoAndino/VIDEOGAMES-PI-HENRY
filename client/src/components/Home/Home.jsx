@@ -6,11 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getGames, filterGamesByGenre, filterGamesCreated, orderGames } from "../../actions/actions";
 import Card from '../Card/Card';
 import Pagination from "../Pagination/Pagination";
+import Loader from '../Loader/Loader';
 
 export default function Home() {
 
     const dispatch = useDispatch();
     const allGames = useSelector((state) => state.myGames);
+    const detail = useSelector(state => state.myDetail);
     const [orden, setOrden] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [gamesPerPage, setgamesPerPage] = useState(15);
@@ -25,16 +27,20 @@ export default function Home() {
 
     useEffect(() => {
         const loadGames = async () => {
-            setLoading(true);
-            await dispatch(getGames());
+            if (!allGames.length) {
+                setLoading(true);
+                await dispatch(getGames());
+            }
             setLoading(false);
         };
         loadGames();
     }, []);
 
-    function handleClick(e) {
+    async function handleClick(e) {
         e.preventDefault();
-        dispatch(getGames());
+        setLoading(true);
+        await dispatch(getGames());
+        setLoading(false);
     }
 
     function handleFilterGenre(e) {
@@ -100,8 +106,9 @@ export default function Home() {
                         gamesPerPage={gamesPerPage}
                         allGames={allGames.length}
                         pagination={pagination}
+                        currentPage={currentPage}
                     />
-                    {loading && <p className={style.loading}>Loading...</p>}
+                    {loading && <Loader/>}
                     <div className={style.cards}>
                         {
                             currentGames && currentGames.map(el => {

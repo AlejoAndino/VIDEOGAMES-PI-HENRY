@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_GAMES, FILTER_BY_GENRE, FILTER_CREATED, ORDER_GAMES, GET_GAMES_BY_NAME, GET_GENRES, GET_DETAIL } from './actions-types';
+import { GET_GAMES, FILTER_BY_GENRE, FILTER_CREATED, ORDER_GAMES, GET_GAMES_BY_NAME, GET_GENRES, GET_DETAIL, CLEAR_DETAIL } from './actions-types';
 
 export function getGames() {
     return async function (dispatch) {
@@ -97,5 +97,12 @@ export function orderGames(payload) {
     return {
         type: ORDER_GAMES,
         payload
+    }
+}
+
+export function clearDetail() {
+    return {
+        type: CLEAR_DETAIL,
+        payload: {}
     }
 }

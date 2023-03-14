@@ -6,3 +6,4 @@ export const GET_GAMES_BY_NAME = "GET_GAMES_BY_NAME";
 export const GET_GENRES = "GET_GENRES";
 export const POST_GAME = "POST_GAME";
 export const GET_DETAIL = "GET_DETAIL";
+export const CLEAR_DETAIL = "CLEAR_DETAIL";

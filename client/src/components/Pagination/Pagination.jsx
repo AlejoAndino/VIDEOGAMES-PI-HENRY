@@ -1,7 +1,7 @@
 import React from "react";
 import style from './Pagination.module.css';
 
-export default function Pagination({ gamesPerPage, allGames, pagination }) {
+export default function Pagination({ gamesPerPage, allGames, pagination, currentPage }) {
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(allGames / gamesPerPage); i++) {
@@ -10,14 +10,29 @@ export default function Pagination({ gamesPerPage, allGames, pagination }) {
 
     return (
         <div className={style.pagination_container}>
-                {
-                    pageNumbers &&
-                    pageNumbers.map(number => {
-                        return (
-                                <button className={style.button} key={Math.random()} onClick={() => pagination(number)}>{number}</button>
-                        )
-                    })
-                }
+            <button
+                className={style.button}
+                onClick={() => pagination(currentPage - 1)}
+                disabled={currentPage === 1}
+            >
+                Prev
+            </button>
+            {pageNumbers.map(number => (
+                <button
+                    key={number}
+                    className={`${style.button} ${number === currentPage ? style.active : ''}`}
+                    onClick={() => pagination(number)}
+                >
+                    {number}
+                </button>
+            ))}
+            <button
+                className={style.button}
+                onClick={() => pagination(currentPage + 1)}
+                disabled={currentPage === pageNumbers.length}
+            >
+                Next
+            </button>
         </div>
     )
 }
