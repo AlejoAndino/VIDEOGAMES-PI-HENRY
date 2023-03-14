@@ -5,7 +5,7 @@ function Card({ id, name, image, genres, onClose }) {
 
     return (
         <div className={style.container_card}>
-            <Link to={`/detail/${id}`}>
+            <Link className={style.link} to={`/detail/${id}`}>
                 <div className={style.container_name}>
                     <h2 className={style.name}>{name}</h2>
                     <img className={style.img} src={image} alt={name} />

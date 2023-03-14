@@ -15,7 +15,7 @@ function SearchBar() {
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      dispatch(getGamesByName(name))
+      dispatch(getGamesByName(name));
    }
 
    return (

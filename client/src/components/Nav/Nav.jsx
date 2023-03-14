@@ -11,7 +11,7 @@ export default function Nav({onSearch}) {
             <div className={style.about}>
                 <Link to="/" className={style.link}>To Landing Page</Link>
                 <Link to='/home' className={style.link}>Home</Link>
-                <Link to='/game' className={style.link}>Crear Juego</Link>
+                <Link to='/creategame' className={style.link}>Create your own game</Link>
                 <Link to='/about' className={style.link}>About</Link>
             </div>
         </div>

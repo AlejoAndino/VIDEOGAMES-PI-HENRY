@@ -1,6 +1,52 @@
+.video_container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.button_reload {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.select {
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
 .cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 70px;
+}
+
+.loading {
+    color: #fff;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import style from './Pagination.module.css';
 
 export default function Pagination({ gamesPerPage, allGames, pagination }) {
     const pageNumbers = [];
@@ -8,12 +9,12 @@ export default function Pagination({ gamesPerPage, allGames, pagination }) {
     }
 
     return (
-        <div>
+        <div className={style.pagination_container}>
                 {
                     pageNumbers &&
                     pageNumbers.map(number => {
                         return (
-                                <button key={Math.random()} onClick={() => pagination(number)}>{number}</button>
+                                <button className={style.button} key={Math.random()} onClick={() => pagination(number)}>{number}</button>
                         )
                     })
                 }

@@ -9,7 +9,7 @@ const LandingPage = () => {
             <div className={style.content}>
                 <h1 className={style.text}>Game Library</h1>
                 <Link to="/home">
-                    <button className={style.button}>Ingresar</button>
+                    <button className={style.button}>Get Into</button>
                 </Link>
             </div>
         </div>
