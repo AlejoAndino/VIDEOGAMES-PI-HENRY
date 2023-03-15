@@ -31,15 +31,6 @@
     cursor: pointer;
 }
 
-.select {
-    font-size: 1rem;
-    padding: 10px 15px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
-
 .cards {
     display: flex;
     justify-content: center;
