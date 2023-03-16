@@ -14,7 +14,6 @@ export default function Home() {
     const dispatch = useDispatch();
     const allGames = useSelector((state) => state.myGames);
     const detail = useSelector(state => state.myDetail);
-    const [orden, setOrden] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [gamesPerPage, setgamesPerPage] = useState(15);
     const [loading, setLoading] = useState(true);
@@ -58,7 +57,6 @@ export default function Home() {
         e.preventDefault();
         dispatch(orderGames(e.target.value));
         setCurrentPage(1);
-        setOrden(`Ordenado ${e.target.value}`)
     }
 
     return (
@@ -68,12 +66,12 @@ export default function Home() {
                 <button className={style.button_reload} onClick={e => { handleClick(e) }}>
                     Reload Game Library
                 </button>
-                <div className={style.filters_container}>
                     <Filters
                         handleSort={handleSort}
                         handleFilterGenre={handleFilterGenre}
                         handleFilterCreated={handleFilterCreated}
                     />
+                <div className={style.filters_container}>
                     <Pagination
                         gamesPerPage={gamesPerPage}
                         allGames={allGames.length}

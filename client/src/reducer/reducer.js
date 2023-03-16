@@ -4,7 +4,10 @@ const initialState = {
     myGames: [],
     myAllGames: [],
     myGenres: [],
-    myDetail: []
+    myDetail: [],
+    filtersGenre: [],
+    filtersOrder: [],
+    filters: []
 }
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -40,7 +43,7 @@ const reducer = (state = initialState, { type, payload }) => {
                 ...state
             }
         case FILTER_BY_GENRE:
-            const allGames = state.myAllGames
+            let allGames = [...state.myAllGames];
             const gamesFiltered = payload === "All" ? allGames : allGames.filter(el => {
                 let genre = [];
                 el.genres.forEach(gen => {
@@ -52,7 +55,9 @@ const reducer = (state = initialState, { type, payload }) => {
             })
             return {
                 ...state,
-                myGames: gamesFiltered
+                myGames: gamesFiltered,
+                filtersGenre: gamesFiltered,
+                filters: gamesFiltered
             }
         case FILTER_CREATED:
             const gamesCreated = payload === 'created' ? state.myAllGames.filter(el => el.CreatedInDb) : state.myAllGames.filter(el => !el.CreatedInDb)
@@ -61,7 +66,13 @@ const reducer = (state = initialState, { type, payload }) => {
                 myGames: payload === 'All' ? state.myAllGames : gamesCreated
             }
         case ORDER_GAMES:
-            const allGamesCopy = [...state.myAllGames];
+            let allGamesCopy = [];
+            if (state.filtersGenre.length) {
+                allGamesCopy = [...state.filtersGenre];
+            } else {
+                allGamesCopy = [...state.myAllGames];
+
+            }
             let sortedGames = payload === "ascAlphabet" ?
                 allGamesCopy.sort((a, b) => {
                     if (a.name > b.name) {
@@ -89,7 +100,9 @@ const reducer = (state = initialState, { type, payload }) => {
                 }) : allGamesCopy
             return {
                 ...state,
-                myGames: sortedGames
+                myGames: sortedGames,
+                filtersOrder: sortedGames,
+                filters: sortedGames
             };
         default:
             return state

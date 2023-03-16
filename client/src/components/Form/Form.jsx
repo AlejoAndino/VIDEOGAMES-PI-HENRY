@@ -188,6 +188,7 @@ export default function Form() {
                         }
                     </div>
                     <div className={style.select_container}>
+                        <label className={style.labels}>Select Genres:</label>
                         <select className={style.select} onChange={(e) => handleSelect(e)}>
                             {allGenres.map(el => {
                                 return <option className={style.option} key={el.name} value={el.name}>{el.name}</option>
