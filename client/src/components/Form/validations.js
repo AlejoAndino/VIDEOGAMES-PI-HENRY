@@ -24,8 +24,8 @@ export default function validate(input) {
     if (!input.released) {
         errors.released = "This field can not be blank";
     } else
-    if (!/^\d{2}-\d{2}-\d{4}$/.test(input.released)) {
-        errors.released = "Invalid date format. Use DD-MM-YYYY";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(input.released)) {
+        errors.released = "Invalid date format. Use YYYY-MM-DD";
       } else
     if (!input.rating) {
         errors.rating = "Rating is required";

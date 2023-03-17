@@ -29,8 +29,8 @@ export default function Home() {
         const loadGames = async () => {
             if (!allGames.length) {
                 setLoading(true);
-                await dispatch(getGames());
             }
+            await dispatch(getGames());
             setLoading(false);
         };
         loadGames();

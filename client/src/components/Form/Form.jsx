@@ -13,6 +13,7 @@ export default function Form() {
     const navigate = useNavigate();
     const allGenres = useSelector((state) => state.myGenres);
     const [errors, setErrors] = useState({});
+    const [disabledSubmit, setDisabledSubmit] = useState(true);
     const [input, setInput] = useState({
         name: "",
         description: "",
@@ -205,7 +206,7 @@ export default function Form() {
                             })
                         }
                     </div>
-                    <button className={style.buttonSubmit} type="submit" disabled={!!Object.keys(errors).length > 0}>Create Game</button>
+                    <button className={style.buttonSubmit} type="submit" disabled={!!Object.keys(errors).length > 0 || input.name.length === 0}>Create Game</button>
                 </form>
             </div>
         </div>

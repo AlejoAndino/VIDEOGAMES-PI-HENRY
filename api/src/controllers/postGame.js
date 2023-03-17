@@ -5,15 +5,20 @@ const postGame = async (req, res) => {
     const { name, description, platforms, image, released, rating, genres } = req.body;
 
     try {
-        const videogame = await Videogame.create({
-            name,
-            description,
-            platforms,
-            image,
-            released,
-            rating,
-            genres
-        });
+        if (!name || !description || !platforms || !image || !released || !rating || !genres) {
+            res.status(400).send("Faltan campos requeridos");
+        } else {
+
+            const videogame = await Videogame.create({
+                name,
+                description,
+                platforms,
+                image,
+                released,
+                rating,
+                genres
+            });
+        }
 
         // Asociar los géneros indicados con el nuevo videojuego
         const genresDb = await Genre.findAll({ where: { name: genres } });
@@ -21,7 +26,7 @@ const postGame = async (req, res) => {
         res.status(200).send('Personaje creado con Exito.');
     }
     catch (error) {
-        res.status(400).send({ error: 'PostGame ' + error.message });
+        res.status(400).send('Faltan campos requeridos');
     }
 };
 
