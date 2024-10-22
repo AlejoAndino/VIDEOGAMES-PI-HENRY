@@ -11,7 +11,7 @@ export default function Nav({onSearch}) {
             <SearchBar/>
             <div className={style.about}>
                 <img className={style.image} src={controller} alt="" />
-                <Link to="/" className={style.link}>To Landing Page</Link>
+                <Link to="/" className={style.link}>Landing</Link>
                 <Link to='/home' className={style.link}>Home</Link>
                 <Link to='/creategame' className={style.link}>Create your own game</Link>
             </div>

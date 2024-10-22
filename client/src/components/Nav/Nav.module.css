@@ -23,6 +23,7 @@
   border-bottom: 2px solid transparent;
   padding: 5px 10px;
   box-shadow: none;
+  white-space: nowrap;
 }
 
 .link:hover {

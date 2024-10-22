@@ -18,7 +18,7 @@
 .text {
   font-size: 4rem;
   font-weight: 700;
-  color: rgb(147, 143, 143);
+  color: rgb(14, 166, 204);
   text-shadow: 2px 2px 0px #333;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -40,7 +40,7 @@
 }
 
 .button {
-  background-color: #2ecc71;
+  background-color: #861ac4;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
@@ -53,7 +53,7 @@
 }
 
 .button:hover {
-  background-color: #1f8e4d;
+  background-color: #211c69;
   box-shadow: 0px 8px 15px -4px rgba(0, 0, 0, 0.4);
 }
 
